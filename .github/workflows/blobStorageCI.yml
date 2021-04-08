@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:            
     - uses: actions/checkout@v2
+    - name: Install Packages
+      run: npm install
+    - name: Build page
+      run: npm run build
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.STATIC_SITE2 }}
